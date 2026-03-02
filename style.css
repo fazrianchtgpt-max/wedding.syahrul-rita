@@ -1,0 +1,756 @@
+:root {
+    --primary-color: #B76E79;
+    /* Rose Gold */
+    --secondary-color: #F8E1E4;
+    /* Soft Blush */
+    --bg-color: #FFFAFA;
+    /* Snow/White-ish Pink */
+    --text-color: #555555;
+    --heading-font: 'Great Vibes', cursive;
+    --subheading-font: 'Playfair Display', serif;
+    --body-font: 'Lato', sans-serif;
+    --card-bg: #FFFFFF;
+    --shadow: 0 4px 20px rgba(183, 110, 121, 0.15);
+    --transition: all 0.4s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    /* Remove highlight on mobile tap */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-size: 16px;
+    /* Base size */
+}
+
+/* Utilities */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--primary-color);
+}
+
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    padding: 0 10px;
+    line-height: 1.2;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--subheading-font);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(183, 110, 121, 0.4);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* Animations Helper Classes (simulating AOS) */
+[data-aos] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+    will-change: opacity, transform;
+    /* Performance optimization */
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.show-content {
+    display: block;
+    opacity: 1;
+}
+
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    /* Fix for mobile browser address bar height changes */
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.6));
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    max-width: 90%;
+    width: 100%;
+    margin: 0 20px;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content h3 {
+    font-family: var(--subheading-font);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.hero-content h1 {
+    font-family: var(--heading-font);
+    font-size: 4.5rem;
+    margin: 10px 0;
+    line-height: 1.1;
+}
+
+.wedding-date {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Music Button */
+.music-control {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 100;
+}
+
+.btn-floating {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spin-slow {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Quote Section */
+.quote-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.verse {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.verse-ref {
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--primary-color);
+}
+
+/* Couple Section */
+.couple-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* Reduced gap slightly for tighter mobile layout */
+}
+
+.couple-card {
+    text-align: center;
+    width: 100%;
+    /* Changed from fixed 300px to fluid */
+    max-width: 350px;
+    /* Cap the max width */
+    padding: 0 10px;
+}
+
+.img-frame {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--secondary-color);
+    box-shadow: var(--shadow);
+}
+
+.img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.couple-card h3 {
+    font-family: var(--subheading-font);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    /* Prevent long names breaking layout */
+}
+
+.couple-ampersand {
+    font-family: var(--heading-font);
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin: 0 20px;
+}
+
+/* Event Section */
+/* Event Section */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.event-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.event-divider {
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 30px 0;
+}
+
+.event-item h3 {
+    font-family: var(--subheading-font);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.event-item p {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.event-item i {
+    color: var(--primary-color);
+    margin-right: 8px;
+    width: 20px;
+}
+
+.map-container {
+    margin: 25px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Gallery Section */
+.gallery-grid {
+    display: grid;
+    /* Responsive Grid Logic */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    aspect-ratio: 1 / 1;
+    /* Square images */
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Disable hover effect on touch usage to prevent sticky states */
+@media (hover: hover) {
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+}
+
+/* Gift Section */
+.bank-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.bank-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    width: 300px;
+    max-width: 100%;
+    border: 1px solid var(--secondary-color);
+    transition: var(--transition);
+}
+
+.bank-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: block;
+}
+
+.bank-number {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 15px 0;
+    letter-spacing: 1px;
+    color: #333;
+    /* Ensure number wraps if too long on tiny screens */
+    word-break: break-all;
+}
+
+.btn-copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 25px;
+    border-radius: 50px;
+    /* Pill shape */
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(183, 110, 121, 0.1);
+}
+
+.btn-copy:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(183, 110, 121, 0.3);
+}
+
+.btn-copy:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(183, 110, 121, 0.2);
+}
+
+/* Wishes Section */
+.wishes-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wishes-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    /* Larger touch target */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    background: #FAFAFA;
+}
+
+select#attendance {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b76e79%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+    cursor: pointer;
+}
+
+select#attendance:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(183, 110, 121, 0.3);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 2px solid var(--secondary-color);
+    border-color: transparent;
+}
+
+.wishes-form .btn-primary {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.wishes-list {
+    max-height: 500px;
+    overflow-y: auto;
+    text-align: left;
+    padding-right: 5px;
+    /* Space for scrollbar */
+}
+
+/* Custom Scrollbar for wishes */
+.wishes-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.wishes-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.wishes-list::-webkit-scrollbar-thumb {
+    background: #dcb0b5;
+    border-radius: 10px;
+}
+
+.wish-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wish-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.wish-name {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.wish-attendance {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.wish-message {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+.wish-date {
+    font-size: 0.75rem;
+    color: #999;
+    text-align: right;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 80px;
+    /* Higher than music button */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    z-index: 1000;
+    transition: opacity 0.3s;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.toast.hidden {
+    opacity: 0;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (Advanced)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        padding: 30px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    /* Improve Gallery Grid on Tablets/Large Phones */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 92%;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Hero Adjustments */
+    .hero-bg {
+        background-position: center;
+    }
+
+    /* Ensure face isn't cut off */
+    .hero-content {
+        padding: 25px 15px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 10px;
+        backdrop-filter: blur(5px);
+    }
+
+    .hero-content h3 {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .wedding-date {
+        font-size: 1rem;
+    }
+
+    /* Couple adjustments */
+    .couple-grid {
+        gap: 15px;
+        flex-direction: column;
+        /* Force stack on mobile */
+    }
+
+    .couple-card {
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .couple-ampersand {
+        font-size: 3rem;
+        margin: -10px 0 20px 0;
+        /* Pull closer to groom, push bride away */
+        line-height: 1;
+        display: block;
+        /* Ensure it takes its own line */
+    }
+
+    .img-frame {
+        width: 160px;
+        height: 160px;
+        border-width: 4px;
+    }
+
+    /* Event adjustments */
+    .event-card {
+        padding: 25px 15px;
+    }
+
+    .event-item h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Gallery: Force 2 columns on small screens, looks better than 1 big column */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    /* Wishes Form */
+    .wishes-form {
+        padding: 20px 15px;
+    }
+
+    /* Bank Card */
+    .bank-card {
+        padding: 20px;
+        width: 100%;
+    }
+
+    /* Floating Buttons */
+    .music-control {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .btn-floating {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 350px) {
+
+    /* For very small devices like Galaxy Fold closed */
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Fallback to 1 column if REALLY narrow */
+}

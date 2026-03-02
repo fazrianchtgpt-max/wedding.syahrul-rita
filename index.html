@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding of Syahrul & Rita</title>
+    <meta name="description" content="Undangan Pernikahan Digital Syahrul & Rita. Selasa, 24 Maret 2026.">
+
+    <!-- Open Graph / Meta SEO (Untuk WhatsApp, Facebook, dll) -->
+    <meta property="og:title" content="The Wedding of Syahrul & Rita">
+    <meta property="og:description"
+        content="Undangan Pernikahan Digital Syahrul & Rita. Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir.">
+    <meta property="og:image" content="assets/images/syahrul-rita.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wedding.syahrul-rita.my.id">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Wedding of Syahrul & Rita">
+    <meta name="twitter:description" content="Kabar Bahagia! Undangan Pernikahan Digital Syahrul & Rita.">
+    <meta name="twitter:image" content="assets/images/syahrul-rita.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/syahrul-rita.png">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Opening / Cover -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg" style="background-image: url('assets/images/hero-bg.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h3 class="letter-spacing">THE WEDDING OF</h3>
+            <h1 class="couple-names">Syahrul & Rita</h1>
+            <p class="wedding-date">Selasa, 24 Maret 2026</p>
+            <div class="guest-info" style="margin: 20px 0;">
+                <p style="font-size: 0.9rem; margin-bottom: 5px; color:#444;">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                <div id="guest-name"
+                    style="font-family: var(--subheading-font); font-size: 1.6rem; color: var(--primary-color); font-weight:bold; margin: 0; padding:10px; background: rgba(255,255,255,0.5); border-radius: 8px;">
+                    Tamu Undangan</div>
+            </div>
+            <button id="open-invite" class="btn-primary">
+                <i class="fas fa-envelope-open-text"></i> Buka Undangan
+            </button>
+        </div>
+    </section>
+
+    <!-- Main Content (Hidden initially or below fold) -->
+    <main id="main-content" class="hidden-content">
+
+        <!-- Music Control -->
+        <div class="music-control">
+            <button id="toggle-music" class="btn-floating spin-slow">
+                <i class="fas fa-compact-disc"></i>
+            </button>
+        </div>
+        <audio id="bg-music" loop>
+            <source src="assets/audio/audio.mp3" type="audio/mp3">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+
+        <!-- Quote / Intro -->
+        <section class="section quote-section">
+            <div class="container">
+                <p class="verse" data-aos="fade-up">
+                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari
+                    jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu
+                    rasa kasih dan sayang."
+                </p>
+                <p class="verse-ref" data-aos="fade-up">(QS. Ar-Rum: 21)</p>
+            </div>
+        </section>
+
+        <!-- Couple Section -->
+        <section id="couple" class="section couple-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Mempelai</h2>
+
+                <div class="couple-grid">
+                    <div class="couple-card" data-aos="fade-right">
+                        <div class="img-frame">
+                            <img src="assets/images/syahrul.png" alt="Groom">
+                        </div>
+                        <h3>Muhammad Syahrul Ramadhan, S.Pd</h3>
+                        <p>Putra dari Ibu Nuraenah dan Bpk.Muhaemin</p>
+                    </div>
+
+                    <div class="couple-ampersand" data-aos="zoom-in">&</div>
+
+                    <div class="couple-card" data-aos="fade-left">
+                        <div class="img-frame">
+                            <img src="assets/images/rita.png" alt="Bride">
+                        </div>
+                        <h3>Rita Riyanti, A.Md.Kep</h3>
+                        <p>Putri dari Ibu Astani dan Bpk.Aryudi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Details -->
+        <section id="event" class="section event-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Acara Pernikahan</h2>
+
+                <div class="event-grid">
+                    <!-- Resepsi Card -->
+                    <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="event-item">
+                            <h3>Resepsi</h3>
+                            <p class="event-date"><i class="far fa-calendar-alt"></i> Selasa, 24 Maret 2026</p>
+                            <p class="event-time"><i class="far fa-clock"></i> 10.00 WIB - 18.00 WIB</p>
+                            <p class="event-loc"><i class="fas fa-map-marker-alt"></i> Rumah Mempelai Pria, Jl.Raya
+                                Ciperna, Blok Sigempol, RT.1, RW.4</p>
+                        </div>
+
+                        <div class="map-container">
+                            <iframe
+                                src="https://maps.google.com/maps?q=-6.7706667,108.5215556&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <a href="https://www.google.com/maps/place//@-6.7706667,108.5215556,17z/data=!4m6!1m5!3m4!2zNsKwNDYnMTQuNCJTIDEwOMKwMzEnMTcuNiJF!8m2!3d-6.7706667!4d108.5215556?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D"
+                                target="_blank" class="btn-primary"
+                                style="display: inline-block; padding: 10px 20px; font-size: 0.9rem;">
+                                <i class="fas fa-map-marked-alt"></i> Buka Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wedding Gift -->
+        <section id="gift" class="section gift-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Wedding Gift</h2>
+                <p class="text-center">Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi
+                    adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashless.</p>
+
+                <div class="bank-grid">
+                    <div class="bank-card" data-aos="flip-right">
+                        <h3>QRIS</h3>
+                        <img src="assets/images/qris.jpg" alt="QR Code">
+                    </div>
+
+                    <div class="bank-card" data-aos="flip-left">
+                        <i class="fas fa-university fa-2x"></i>
+                        <h3>BCA</h3>
+                        <p class="bank-number" id="bank-bca"> 3741068565 </p>
+                        <p class="bank-name">a.n Muhammad Syahrul. R</p>
+                        <button class="btn-copy" onclick="copyText('bank-bca')"><i class="far fa-copy"></i> Salin No.
+                            Rekening</button>
+                    </div>
+
+                    <div class="bank-card" data-aos="flip-right">
+                        <i class="fas fa-wallet fa-2x"></i>
+                        <h3>MANDIRI</h3>
+                        <p class="bank-number" id="ewallet-dana">1340028318151</p>
+                        <p class="bank-name">a.n Rita Riyanti</p>
+                        <button class="btn-copy" onclick="copyText('ewallet-dana')"><i class="far fa-copy"></i> Salin
+                            Nomor</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wishes / Comments -->
+        <section id="wishes" class="section wishes-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Ucapan & Doa</h2>
+
+                <div class="wishes-container">
+                    <form id="wishes-form" class="wishes-form" data-aos="fade-up">
+                        <div class="form-group">
+                            <input type="text" id="sender-name" placeholder="Nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="sender-message" rows="4" placeholder="Tuliskan ucapan & doa..."
+                                required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <select id="attendance">
+                                <option value="Hadir">Hadir</option>
+                                <option value="Belum Pasti">Belum Pasti</option>
+                                <option value="Tidak Hadir">Tidak Hadir</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary">Kirim Ucapan</button>
+                    </form>
+
+                    <div id="wishes-list" class="wishes-list">
+                        <!-- Wishes will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <p class="couple-footer">Syahrul & Rita</p>
+                <p class="credit">Wedding Invitation Created by Growigo.id</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <div id="toast-message" class="toast hidden">Teks berhasil disalin!</div>
+
+    <!-- Menambahkan integrasi Firebase metode standar (aman untuk file lokal / localhost) -->
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
