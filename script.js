@@ -99,13 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Scroll Animations (AOS equivalent)
     const observerOptions = {
-        threshold: 0.2
+        threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('aos-animate');
+            } else {
+                entry.target.classList.remove('aos-animate');
             }
         });
     }, observerOptions);
